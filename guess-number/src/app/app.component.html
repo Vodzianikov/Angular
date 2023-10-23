@@ -1,0 +1,13 @@
+<h1 [ngClass]="'text-center'">{{ title }}</h1>
+
+<input type="text" [(ngModel)]="userNumber"> 
+<button [ngClass]="['btn', 'btn-success', 'm-2']" (click)="verify()">Угадать</button>
+<button [ngClass]="['btn', 'btn-success', 'm-2']" (click)="reset()">Начать заново</button>
+
+<p [ngClass]="['alert', 'alert-warning']" *ngIf="deviation > 0">Ваше число меньше задуманного</p>
+<p [ngClass]="['alert', 'alert-warning']" *ngIf="deviation < 0 && deviation > -101">Ваше число больше задуманного</p>
+<p [ngClass]="['alert', 'alert-success']"*ngIf="deviation == 0">Вы угадали число</p>
+<p>Количество попыток - {{ countTry }}</p>
+
+
+
